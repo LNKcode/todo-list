@@ -1,19 +1,31 @@
-let navMain = document.querySelector('.navigation');
-let navToggle = document.querySelector('.header__burger');
+const btnsImoprtant = document.querySelectorAll('.main-scope__btn');
 
-navMain.classList.remove('navigation--no-js');
-navToggle.classList.remove('header__burger--no-js');
+btnsImoprtant.forEach((item) => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('important');
+  })
+})
 
-navMain.classList.add('navigation--closed');
+const checkboxes = document.querySelectorAll('.main-scope__checkbox');
+const delBtnNode = document.querySelector('.main-scope__del-btn');
+const spanCounterNode = document.querySelector('.main-scope__del-btn span');
 
-navToggle.addEventListener('click', function () {
-  if (navMain.classList.contains('navigation--closed')) {
-    navMain.classList.remove('navigation--closed');
-    navMain.classList.add('navigation--open');
-    navToggle.classList.add('header__burger--open');
-  } else {
-    navMain.classList.add('navigation--closed');
-    navMain.classList.remove('navigation--open');
-    navToggle.classList.remove('header__burger--open');
-  }
-});
+
+checkboxes.forEach((item) => {
+  item.addEventListener('change', () => {
+    if (item.checked) {
+      item.closest('.main-scope__item').classList.add('checked-item')
+    } else {
+      item.closest('.main-scope__item').classList.remove('checked-item')
+    }
+    let checkedItems = document.querySelectorAll('.checked-item').length;
+    spanCounterNode.textContent = `${checkedItems}`;
+    if (checkedItems === 0) {
+      delBtnNode.classList.add('hidden')
+    } else {
+      if (delBtnNode.classList.contains('hidden')) {
+        delBtnNode.classList.remove('hidden')
+      }
+    }
+  })
+})

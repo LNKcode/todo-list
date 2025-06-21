@@ -1,30 +1,37 @@
 .main-scope__list {
-    @include list;
-    
+  @include list;
+
 }
 
 .main-scope__item {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
 
-    &:has(.important) {
-      background-color: rgba(254, 187, 198, 0.841)
-    }
+  &:has(.important) {
+    background-color: rgba(254, 187, 198, 0.841)
+  }
 }
 
 .main-scope__checkbox {
-    width: 30px;
-    height: 30px;
-    margin-right: 15px;
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+
+  &:checked+.main-scope__desc {
+    text-decoration: line-through;
+  }
 }
 
 .main-scope__btn {
   background-color: transparent;
   border: none;
   margin-left: auto;
-// класс ниже нужен для кнопки -> "!" меняет fill у свг 
-  &.important svg { 
+  cursor: pointer;
+
+  // класс ниже нужен для кнопки -> "!" меняет fill у свг 
+  &.important svg {
     fill: rgba(255, 17, 0, 0.883);
   }
 }
@@ -34,3 +41,8 @@
   flex-grow: 1;
 }
 
+.main-scope__del-btn {
+  &.hidden {
+    display: none;
+  }
+}
