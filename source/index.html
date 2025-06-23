@@ -16,9 +16,18 @@
   </header>
   <main>
     <section class="main-scope container">
-      <button class="main-scope__del-btn hidden" type="button">
-        Удалить <span>1</span>
-      </button>
+
+      <div class="main-scope__del-wrapper">
+        <button class="main-scope__del-btn hidden" type="button">
+          Удалить <span>1</span>
+        </button>
+        <div class="main-scope__tooltip">
+          <p>
+            Невозможно удалить важную задачу!
+          </p>
+        </div>
+      </div>
+
       <ul class="main-scope__list">
         <li class="main-scope__item">
           <input type="checkbox" class="main-scope__checkbox">
@@ -55,6 +64,11 @@
       </ul>
     </section>
   </main>
+  <div class="notification">
+    <p>
+      Ваши задачи были удалены ! Вы молодец! 
+    </p>
+  </div>
   <script src="./js/script.js"></script>
 </body>
 

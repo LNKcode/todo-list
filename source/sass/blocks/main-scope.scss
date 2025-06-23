@@ -5,7 +5,7 @@
 
 .main-scope {
   position: relative;
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 .main-scope__item {
@@ -49,13 +49,47 @@
 }
 
 .main-scope__del-btn {
-  position: absolute;
-  top: 0;
-  left: 0;
+
   &.hidden {
     display: none;
   }
   &:disabled {
-    opacity: 0.3;
+    opacity: 0.7;
+
+    &:hover + .main-scope__tooltip {
+      display: block;
+    }
   }
+}
+
+.main-scope__tooltip {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: calc(100% + 22px);
+  width: 200px;
+  background-color: bisque;
+  padding: 10px;
+  border-radius: 5px;
+  transform: translateY(-50%);
+
+  &::after {
+    @include pseudo;
+    width: 20px;
+    height: 20px;
+    background-color: bisque;
+    transform: rotate(45deg) translateY(-50%);
+    top: 50%;
+    left: -12px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.main-scope__del-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 0;
 }

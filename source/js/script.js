@@ -16,20 +16,22 @@ descItems.forEach((item) => {
 
 const checkboxes = document.querySelectorAll('.main-scope__checkbox');
 const delBtnNode = document.querySelector('.main-scope__del-btn');
-const spanCounterNode = document.querySelector('.main-scope__del-btn span');
+const spanCounterNode = delBtnNode.querySelector('.main-scope__del-btn span');
+const notificationNode = document.querySelector('.notification');
 
 
 
 checkboxes.forEach((item) => {
   item.addEventListener('change', () => {
     let importantTask = false;
+    let parentChekbox = item.closest('.main-scope__item')
     if (item.checked) {
-      item.closest('.main-scope__item').classList.add('checked-item');
-      item.closest('.main-scope__item').querySelector('.main-scope__btn').setAttribute('disabled', true);
+      parentChekbox.classList.add('checked-item');
+      parentChekbox.querySelector('.main-scope__btn').setAttribute('disabled', true);
 
     } else {
-      item.closest('.main-scope__item').classList.remove('checked-item');
-      item.closest('.main-scope__item').querySelector('.main-scope__btn').removeAttribute('disabled');
+      parentChekbox.classList.remove('checked-item');
+      parentChekbox.querySelector('.main-scope__btn').removeAttribute('disabled');
     }
     let checkedItems = document.querySelectorAll('.checked-item');
     spanCounterNode.textContent = `${checkedItems.length}`;
@@ -38,6 +40,7 @@ checkboxes.forEach((item) => {
         importantTask = true;
       }
     })
+
     if (importantTask) {
       delBtnNode.setAttribute('disabled', true);
     } else {
@@ -58,5 +61,9 @@ delBtnNode.addEventListener('click', () => {
     item.remove();
   })
   delBtnNode.classList.add('hidden')
+  notificationNode.classList.add('visible');
+  setTimeout(() => {
+    notificationNode.classList.remove('visible');
+  }, 5000)
 })
 
