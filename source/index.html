@@ -63,11 +63,67 @@
         </li>
       </ul>
     </section>
+    <div class="add">
+      <button class="add__btn">
+        ДОБАВИТЬ ЗАДАЧУ!
+      </button>
+    </div>
   </main>
   <div class="notification">
     <p>
-      Ваши задачи были удалены ! Вы молодец! 
+      Ваши задачи были удалены ! Вы молодец!
     </p>
+  </div>
+  <div class="modal modal--auth" id="modal-login">
+    <div class="modal__wrapper">
+      <form class="form" action="https://echo.htmlacademy.ru/" method="post">
+        <h2>
+          ВХОД
+        </h2>
+        <ul>
+          <li>
+            <label class="form__label" for="login"> Login </label>
+            <input class="form__input" type="text" id="login" name="login" required>
+          </li>
+          <li>
+            <label class="form__label" for="password"> Password </label>
+            <input class="form__input" type="password" id="password" name="password" required>
+          </li>
+        </ul>
+        <button class="form__submit" type="submit">
+          Отправить
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="modal  modal--add" id="add">
+    <div class="modal__overlay">
+    </div>
+    <div class="modal__wrapper">
+      <button class="modal__close" type="button" aria-label="Закрыть модальное окно.">
+        x
+      </button>
+      <div class="modal__content">
+        <h2>
+          Добавь новую задачу 
+        </h2>
+              <form class="form" action="https://echo.htmlacademy.ru/" method="post">
+        <ul>
+          <li>
+            <label class="form__label" for="name-task"> Название </label>
+            <input class="form__input" type="text" id="name-task" name="name-task" required>
+          </li>
+          <li>
+            <input class="form__checkbox" type="checkbox" id="checkbox-important" name="checkbox-important" required>
+            <label class="form__label" for="checkbox-important"> Важная задача </label>
+          </li>
+        </ul>
+        <button class="form__submit" type="submit">
+          Отправить
+        </button>
+      </form>
+      </div>
+    </div>
   </div>
   <script src="./js/script.js"></script>
 </body>

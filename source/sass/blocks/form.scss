@@ -1,0 +1,17 @@
+.form {
+  ul {
+    @include list;
+  }
+
+  li {
+    margin-bottom: 12px;
+  }
+}
+
+.form__label {
+  display: block;
+}
+
+.form__checkbox + .form__label {
+  display: inline-block;
+}

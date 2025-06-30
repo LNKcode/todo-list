@@ -67,3 +67,25 @@ delBtnNode.addEventListener('click', () => {
   }, 5000)
 })
 
+// скрипт для модалок 
+
+const LOGIN = 'Igor'
+const PASSWORD = '123123'
+
+const modalLogin = document.querySelector('#modal-login');
+const modalSubmit = modalLogin.querySelector('.form__submit');
+const modalInputLogin = modalLogin.querySelector('#login');
+const modalInputPassword = modalLogin.querySelector('#password');
+const modalForm = modalLogin.querySelector('.form');
+
+modalForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (modalInputLogin.value === LOGIN && modalInputPassword.value === PASSWORD) {
+    modalLogin.classList.add('modal--close')
+  } else {
+    alert('Попробуй с большой буквы Igor');
+  }
+})
+
+
+
