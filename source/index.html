@@ -63,7 +63,7 @@
         </li>
       </ul>
     </section>
-    <div class="add">
+    <div class="add container">
       <button class="add__btn">
         ДОБАВИТЬ ЗАДАЧУ!
       </button>
@@ -74,6 +74,7 @@
       Ваши задачи были удалены ! Вы молодец!
     </p>
   </div>
+  <!-- модалка для входа -->
   <div class="modal modal--auth" id="modal-login">
     <div class="modal__wrapper">
       <form class="form" action="https://echo.htmlacademy.ru/" method="post">
@@ -96,7 +97,8 @@
       </form>
     </div>
   </div>
-  <div class="modal  modal--add" id="add">
+  <!-- модалка для задачи -->
+  <div class="modal modal--close  modal--add" id="add">
     <div class="modal__overlay">
     </div>
     <div class="modal__wrapper">
@@ -105,23 +107,23 @@
       </button>
       <div class="modal__content">
         <h2>
-          Добавь новую задачу 
+          Добавь новую задачу
         </h2>
-              <form class="form" action="https://echo.htmlacademy.ru/" method="post">
-        <ul>
-          <li>
-            <label class="form__label" for="name-task"> Название </label>
-            <input class="form__input" type="text" id="name-task" name="name-task" required>
-          </li>
-          <li>
-            <input class="form__checkbox" type="checkbox" id="checkbox-important" name="checkbox-important" required>
-            <label class="form__label" for="checkbox-important"> Важная задача </label>
-          </li>
-        </ul>
-        <button class="form__submit" type="submit">
-          Отправить
-        </button>
-      </form>
+        <form class="form" action="https://echo.htmlacademy.ru/" method="post">
+          <ul>
+            <li>
+              <label class="form__label" for="name-task"> Название </label>
+              <input class="form__input" type="text" id="name-task" name="name-task" required>
+            </li>
+            <li>
+              <input class="form__checkbox" type="checkbox" id="checkbox-important" name="checkbox-important">
+              <label class="form__label" for="checkbox-important"> Важная задача </label>
+            </li>
+          </ul>
+          <button class="form__submit" type="submit">
+            Отправить
+          </button>
+        </form>
       </div>
     </div>
   </div>
